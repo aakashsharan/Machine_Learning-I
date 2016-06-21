@@ -119,3 +119,15 @@ table(test$spam, predict_rf2 >= 0.5)
 pred_ROCR_RF_test <- prediction(predict_rf, test$spam)
 as.numeric(performance(pred_ROCR_RF_test, 'auc')@y.values)
 
+
+# ok, so lets create some wordclouds for better understanding.
+# the most common word that appears at least in 5% of the emails
+
+emailsCloud <- as.data.frame(as.matrix(spdtm))
+wordcloud(colnames(emailsCloud), colSums(emailsCloud), scale = c(4, 0.5))
+# well we expect to see "enron" to appear in the most.
+
+# now lets style our graph in various different ways to tell the stories.
+wordcloud(colnames(emailsCloud), colSums(emailsCloud), scale = c(4, 0.5), random.order = FALSE, colors=brewer.pal(9, "Blues"))
+wordcloud(colnames(emailsCloud), colSums(emailsCloud), scale = c(4, 0.5), random.order = FALSE, colors=brewer.pal(9, "Blues")[c(5, 6, 7, 8, 9)])
+
