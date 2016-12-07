@@ -1,0 +1,1 @@
+This is a Word Count Application build using Apache Spark 2.0.2 on Databricks Cloud Notebook. We calculate the most common words in [A Tale of Two Cities by Charles Dickens](https://www.gutenberg.org/ebooks/98) from Project Gutenberg.
